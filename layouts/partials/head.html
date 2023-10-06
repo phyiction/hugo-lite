@@ -1,0 +1,21 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Custom Bulma -->
+    <link rel="stylesheet" type="text/css" href="/css/custom-bulma.min.css" />
+
+    <!-- FontAwesome Free -->
+    <link rel="stylesheet" type="text/css" href="/css/fontawesome/fontawesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="/css/fontawesome/brands.min.css" />
+
+    <!-- Custom Material Symbols -->
+    <link rel="stylesheet" type="text/css" href="/css/material-symbols/custom-material-symbols.min.css" />
+
+    <script type="text/javascript" src="/js/menu-toggle.js"></script>
+
+    {{ $title := print .Site.Title " &raquo; " .Title }}
+    {{ if .IsHome }}
+        {{ $title = .Site.Title }}
+    {{ end }}
+    <title>{{ $title | safeHTML }} </title>
+</head>

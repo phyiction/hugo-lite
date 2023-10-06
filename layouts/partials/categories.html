@@ -1,0 +1,8 @@
+{{ if isset .Params "categories" }}
+<section class="content">
+  <h6 class="title">Categories</h6>
+  {{ range .Params.categories }}    
+    <a class="tag" href="/categories/{{.}}/">{{.}}</a>
+  {{ end }}
+</section>
+{{ end }}

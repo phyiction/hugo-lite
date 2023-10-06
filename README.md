@@ -1,0 +1,36 @@
+# Hugo lite
+
+## Description
+A minimalist blog theme for Hugo built using the [Bulma](https://bulma.io/) 
+CSS framework and icons from [Material Symbols](https://fonts.google.com/icons) 
+and [Font Awesome](https://fontawesome.com/).
+
+## Theme Parameters
+
+`config.toml` or `hugo.toml`
+
+```
+...
+
+[params]
+  # See https://gohugo.io/functions/format/#layout-string for possible values
+  dateFormat = "" # Defaults to "Jan 02, 2006" 
+  timeFormat = "" # Defaults to "3:04 PM MST"
+
+  [params.social]
+    # See https://fontawesome.com/search?o=r&f=brands for valid keys
+    github = "https://github.com/username"
+    linkedin = "https://www.linkedin.com/in/username/"
+
+...
+```
+
+## Installation
+
+```
+
+```
+
+## Support
+
+Create an issue on GitHub [here](https://github.com/phyiction/hugo-lite/issues/new). 

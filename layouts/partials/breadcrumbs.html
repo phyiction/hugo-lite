@@ -1,0 +1,8 @@
+<nav class="breadcrumb has-succeeds-separator is-small" aria-label="breadcrumbs">
+  <ul>
+    {{- range (after 1 .Ancestors.Reverse) }}
+    <li><a href="{{.RelPermalink}}">{{.Title}}</a></li>
+    {{ end }}
+    <li class="is-active"><a href="{{.RelPermalink}}" aria-current="page">{{.Title}}</a></li>
+  </ul>
+</nav>

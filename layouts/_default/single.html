@@ -1,0 +1,20 @@
+{{ define "main" }}
+<div class="container is-max-desktop">  
+  {{- partial "breadcrumbs.html" . -}}
+  <div class="columns">    
+    <div class="column is-8">
+      <article>
+        <p class="is-size-1 title">{{.Title}}</p>
+        {{- partial "metadata.html" . -}}
+        <div class="content">
+          {{.Content}}        
+        </div>
+      </article>
+    </div>
+    <div class="column is-4">      
+      {{- partial "categories.html" . -}}
+      {{- partial "tags.html" . -}}
+    </div>
+  </div>
+</div>     
+{{ end }}

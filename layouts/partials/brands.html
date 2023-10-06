@@ -1,0 +1,13 @@
+<!-- 
+  Social media icons 
+  See https://fontawesome.com/search?o=r&f=brands for all valid keys
+-->
+{{- if isset .Site.Params "social" -}}
+  {{- range $key, $value := .Site.Params.Social -}}
+  <a href="{{$value}}">
+    <span class="icon is-large">            
+        <i class="fa-brands fa-{{$key}} fa-xl"></i>
+    </span>    
+  </a>                        
+  {{- end -}}
+{{- end -}}

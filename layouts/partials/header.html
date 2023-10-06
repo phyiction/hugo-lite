@@ -1,0 +1,32 @@
+<div class="container is-max-desktop">
+  <nav class="navbar block is-transparent" role="navigation" aria-label="main navigation">  
+    <div class="navbar-brand">    
+      <a class="navbar-item" href="{{.Site.BaseURL}}"> 
+        <span class="icon-text">
+          <span class="icon">     
+        {{ if isset .Site.Params "Logo" }}          
+            <img src="{{ .Site.Params.Logo | safeHTMLAttr }}" class="image is-48x48" />
+        {{ else }}
+            <span class="material-symbols-rounded">{{ .Site.Params.Icon | default "light" }}</span>              
+        {{ end }}
+          </span>          
+          <span>{{ .Site.Title }}</span>
+        </span>      
+      </a>
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navMainMenu">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    <div class="navbar-menu" id="navMainMenu">
+      <div class="navbar-start">      
+      </div>
+      <div class="navbar-end">
+        {{ range .Site.Menus.main }}        
+          <a class="navbar-item" href="{{ .URL }}" id="{{.Identifier}} ">{{ .Name }}</a>
+        {{ end }}
+      </div>
+    </div>  
+  </nav>
+</div>

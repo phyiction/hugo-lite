@@ -1,0 +1,37 @@
+{{ define "main" }}
+<div class="container is-max-desktop">
+  <section class="hero is-large is-primary">
+    <div class="hero-body">
+      <p class="title has-text-dark">{{ .Site.Title }}</p>
+      <p class="subtitle has-text-dark">{{ .Site.Params.Description | default "Your blog tagline" }}</p>
+    </div>
+  </section>
+  <div class="tile is-ancestor mt-4">
+    <div class="tile is-vertical is-12">
+      <div class="tile">
+        <div class="tile is-parent">
+          <article class="tile is-child notification is-danger">
+            {{- range where .Site.AllPages "Type" "eq" "post" | first 1 -}}
+            {{- partial "page-tile.html" . }}
+            {{- end -}}
+          </article>
+        </div>
+        <div class="tile is-parent">
+          <article class="tile is-child notification is-warning">
+            {{- range where .Site.AllPages "Type" "eq" "post" | after 2 | first 1 -}}
+            {{- partial "page-tile.html" . }}
+            {{- end -}}
+          </article>          
+        </div>
+        <div class="tile is-parent">
+          <article class="tile is-child notification is-info">
+            {{- range where .Site.AllPages "Type" "eq" "post" | after 3 | first 1 -}}
+            {{- partial "page-tile.html" . }}
+            {{- end -}}
+          </article>                    
+        </div>        
+      </div>
+    </div>    
+  </div>
+</div>
+{{- end -}}
