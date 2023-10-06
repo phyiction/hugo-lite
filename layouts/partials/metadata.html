@@ -1,6 +1,6 @@
 {{- $dateFormat := .Site.Params.dateFormat | default "Jan 02, 2006" -}}
 {{- $timeFormat := .Site.Params.timeFormat | default "3:04 PM MST" -}}
-
+{{- if ne .Type "page" -}}
 <div class="block is-size-7">
   <span class="icon-text">
     <!-- Archetype -->    
@@ -46,3 +46,4 @@
     
   </span>
 </div>
+{{- end -}}
