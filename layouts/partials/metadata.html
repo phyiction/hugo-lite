@@ -3,13 +3,13 @@
 
 <div class="block is-size-7">
   <span class="icon-text">
-    <!-- Archetype -->
+    <!-- Archetype -->    
     {{- if eq .Type "post" -}}
       <span class="icon">
-        <span class="material-symbols-rounded">article</span> 
+        <span class="material-symbols-rounded">article</span>
       </span>
-    {{- else -}}    
-      <span class="tag">{{ .Kind }}</span>    
+    {{- else -}}
+      <span class="tag">{{ .Type }}</span>
     {{- end -}}
     
     <!-- Published date -->  
