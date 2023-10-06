@@ -2,8 +2,10 @@
 <div class="container is-max-desktop">
   <div class="columns">
     <div class="column is-6">
-      <p class="title is-1">{{ .Title }}</p>
-      <p class="subtitle is-3">{{print "Type=\"" .Type "\"" }}</p>      
+      <p class="title is-1">
+        <span class="is-capitalized">{{ .Kind }}</span>: {{ .Title }}
+      </p>      
+      <div class="block">
       {{ range .Pages }}
         <div class="block">
           <p class="title is-5"><a href="{{ .Permalink }}">{{ .Title }}</a></p>
@@ -12,6 +14,7 @@
           </p>
         </div>
       {{ end }}
+      </div>
     </div>
   </div>
 </div>
