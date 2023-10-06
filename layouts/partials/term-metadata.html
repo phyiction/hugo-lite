@@ -1,0 +1,14 @@
+<span class="icon-text">
+  <span class="icon">
+    <span class="material-symbols-rounded">article</span>
+  </span>
+  <span>
+    {{- range .Data.Pages.GroupBy "Type" -}}
+    {{- $pageCount := .Pages | len -}}
+      {{ $pageCount }} {{ .Key }}
+      {{- if gt $pageCount 1 -}}
+        s
+      {{- end -}}
+    {{- end -}}
+  </span>
+</span>
