@@ -17,6 +17,9 @@ and [Font Awesome](https://fontawesome.com/).
   dateFormat = "" # Defaults to "Jan 02, 2006" 
   timeFormat = "" # Defaults to "3:04 PM MST"
 
+  # Image to display in navbar for brand
+  logo = "" # Path to image
+
   [params.social]
     # See https://fontawesome.com/search?o=r&f=brands for valid keys
     github = "https://github.com/username"
