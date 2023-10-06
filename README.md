@@ -28,7 +28,8 @@ and [Font Awesome](https://fontawesome.com/).
 ## Installation
 
 ```
-
+git submodule add --depth=1 https://github.com/phyiction/hugo-lite.git themes/lite
+git submodule update --init --recursive
 ```
 
 ## Support
