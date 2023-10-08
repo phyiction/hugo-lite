@@ -5,8 +5,20 @@
     <div class="column is-8">
       <article>
         <p class="is-size-1 title">{{.Title}}</p>
-        {{- partial "metadata.html" . -}}
+        {{- partial "metadata.html" . -}}        
         <div class="content">
+          {{- if eq .Type "project" -}}
+            {{- $fileDir := .File.Dir -}}            
+            {{- $imgExt := "gif,png,jpg" -}}
+            {{- range split $imgExt "," -}}
+              {{- $filename := print "screenshot." . -}}              
+              {{- if os.FileExists (print $fileDir $filename) -}}
+                <figure>
+                  <img src="{{$filename}}" />
+                </figure>
+              {{- end -}}
+            {{- end -}}
+          {{- end -}}
           {{.Content}}        
         </div>
       </article>

@@ -1,5 +1,7 @@
 {{- if eq .Kind "term" -}}
-  {{- partial "term-metadata.html" . -}}
+  {{- partial "metadata-term.html" . -}}
 {{- else if eq .Type "post" -}}
-  {{- partial "post-metadata.html" . -}}
+  {{- partial "metadata-post.html" . -}}
+{{- else if eq .Type "project" -}}
+  {{- partial "metadata-project.html" . -}}
 {{- end -}}

@@ -1,0 +1,27 @@
+<div class="block is-size-7">
+  <span class="icon-text">
+    <!-- Archetype -->    
+    {{- if eq .Type "post" -}}
+      <span class="icon">
+        <span class="material-symbols-rounded">article</span>
+      </span>
+    {{- else -}}
+      <span class="tag">{{ .Type }}</span>
+    {{- end -}}
+    
+    {{- partial "metadata-date.html" . }}
+    
+    <!-- Author -->
+    {{- if .GitInfo -}}
+      <span>&nbsp;&middot;&nbsp;</span>
+      <address class="is-inline">
+        <a href="mailto:{{ .GitInfo.AuthorEmail | default '#' | safeHTMLAttr }}">{{ .GitInfo.AuthorName | default "TBD" }}</a>
+      </address>    
+    {{- end -}}
+    
+    <span>&nbsp;&middot;&nbsp;</span>
+
+    {{- partial "reading-time.html" . -}}
+    
+  </span>
+</div>

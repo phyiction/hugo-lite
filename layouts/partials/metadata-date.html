@@ -1,0 +1,21 @@
+{{- $dateFormat := .Site.Params.dateFormat | default "Jan 02, 2006" -}}
+{{- $timeFormat := .Site.Params.timeFormat | default "3:04 PM MST" -}}
+
+<!-- Published date -->  
+{{- $publishDate := .PublishDate.Format $dateFormat -}}
+{{- $lastMod := .Lastmod.Format $dateFormat -}}
+<span><time datetime="{{ .PublishDate | safeHTMLAttr }}">{{ $publishDate }}</time></span>
+
+<!-- Last modified date -->
+{{- if .Lastmod -}}
+  <span>&nbsp;&middot;&nbsp;</span>
+  <span>Last updated 
+    <time datetime="{{ .Lastmod | safeHTMLAttr }}">
+    {{- if eq $publishDate $lastMod -}}
+      {{ .Lastmod.UTC.Format $timeFormat }}
+    {{- else -}}
+      {{ .Lastmod.UTC.Format (print $dateFormat " " $timeFormat) }}
+    {{- end }}
+    </time>
+  </span>          
+{{- end -}}  
