@@ -1,11 +1,11 @@
 {{ define "main" }}
 <div class="container is-max-desktop">  
   {{- partial "breadcrumbs.html" . -}}
-  <div class="columns p-4">    
-    <div class="column is-8">
-      <article>
-        <p class="is-size-1 title">{{.Title}}</p>
-        {{- partial "metadata.html" . -}}        
+  <article class="block p-4">
+    <p class="is-size-1 title">{{.Title}}</p>
+    {{- partial "metadata.html" . -}}
+    <div class="columns">    
+      <div class="column is-8">
         <div class="content">
           {{- if eq .Type "project" -}}
             {{- $fileDir := .File.Dir -}}            
@@ -20,13 +20,13 @@
             {{- end -}}
           {{- end -}}
           {{.Content}}        
-        </div>
-      </article>
+        </div>      
+      </div>
+      <div class="column is-4">      
+        {{- partial "categories.html" . -}}
+        {{- partial "tags.html" . -}}
+      </div>
     </div>
-    <div class="column is-4">      
-      {{- partial "categories.html" . -}}
-      {{- partial "tags.html" . -}}
-    </div>
-  </div>
+  </article>
 </div>     
 {{ end }}
