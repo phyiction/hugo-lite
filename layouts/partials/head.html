@@ -11,6 +11,10 @@
     <!-- Custom Material Symbols -->
     <link rel="stylesheet" type="text/css" href="/css/material-symbols/custom-material-symbols.min.css" />
 
+    <!-- Google Analytics -->
+    {{ template "_internal/google_analytics.html" . }}
+
+    <!-- Custom JavaScript -->
     <script type="text/javascript" src="/js/menu-toggle.js"></script>
 
     {{ $title := print .Site.Title " &raquo; " .Title }}
