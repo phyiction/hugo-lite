@@ -7,7 +7,7 @@
         {{ if isset .Site.Params "Logo" }}          
             <img src="{{ .Site.Params.Logo | safeHTMLAttr }}" class="image is-48x48" />
         {{ else }}
-            <span class="material-symbols-rounded">{{ .Site.Params.Icon | default "light" }}</span>              
+            <span class="material-symbols-outlined">{{ .Site.Params.Icon | default "lightbulb_2" }}</span>              
         {{ end }}
           </span>          
           <span>{{ .Site.Title }}</span>
